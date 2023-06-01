@@ -1,0 +1,85 @@
+﻿<Window x:Class="TaskTracking3.Views.EditTaskWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskTracking3.Views"
+        xmlns:vm="clr-namespace:TaskTracking3.ViewModels"
+        mc:Ignorable="d"
+        Title="Редактирование задач" 
+        Height="490" 
+        Width="400">
+    <Window.DataContext>
+        <vm:EditTaskWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <StackPanel
+            Orientation="Vertical"
+            VerticalAlignment="Center"
+            Margin="10">
+            <TextBlock 
+                Text="Название:"/>
+            <TextBox
+                Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock 
+                Text="Описание:"/>
+            <TextBox
+                Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock 
+                Text="Дата начала работ:"/>
+            <TextBox
+                Text="{Binding StartWork, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock 
+                Text="Дата завершения работ:"/>
+            <TextBox
+                Text="{Binding EndWork, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock 
+                Text="Категория задания:"/>
+            <ComboBox 
+                IsEditable="True"
+                IsReadOnly="True"
+                Text="Выбрать..."
+                ItemsSource="{Binding TaskCategoryList, UpdateSourceTrigger=PropertyChanged}"
+                SelectedItem="{Binding TaskCategorySelectedItem, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock 
+                Text="Отдел:"/>
+            <ComboBox 
+                IsEditable="True"
+                IsReadOnly="True"
+                Text="Выбрать..."
+                ItemsSource="{Binding DepartmentList, UpdateSourceTrigger=PropertyChanged}"
+                SelectedItem="{Binding DepartmentSelectedItem, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock 
+                Text="Тэги:"/>
+            <ListBox
+                Height="70"
+                SelectionMode="Multiple"
+                ItemsSource="{Binding TagList, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock 
+                Text="Сотрудники:"/>
+            <ListBox
+                Height="70"
+                SelectionMode="Multiple"
+                ItemsSource="{Binding EmployeeList, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Button 
+                x:Name="AddButton"
+                Content="Добавить"
+                Command="{Binding AddCommand}"/>
+            <Button 
+                x:Name="SaveButton"
+                Content="Сохранить"
+                Command="{Binding SaveCommand}"/>
+            <Button 
+                Content="Выйти"
+                Click="Exit_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

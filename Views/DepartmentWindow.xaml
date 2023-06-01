@@ -1,0 +1,116 @@
+﻿<Window x:Class="TaskTracking3.Views.DepartmentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskTracking3.Views"
+        xmlns:vm="clr-namespace:TaskTracking3.ViewModels"
+        mc:Ignorable="d"
+        Title="Отдел" 
+        Height="300" 
+        Width="550">
+    <Window.DataContext>
+        <vm:DepartmentWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="0.4*"/>
+        </Grid.ColumnDefinitions>
+
+        <ListView
+            Grid.Column="0"
+            ScrollViewer.VerticalScrollBarVisibility="Hidden"
+            HorizontalContentAlignment="Stretch"
+            ItemsSource="{Binding Departments, UpdateSourceTrigger=PropertyChanged}"
+            SelectedIndex="{Binding SelectedIndex, UpdateSourceTrigger=PropertyChanged}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border
+                        BorderBrush="Black"
+                        BorderThickness="1">
+                        <Grid
+                            Height="40">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.3*"/>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="0.6*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock 
+                                Grid.Column="0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Text="{Binding Id, StringFormat=Id: {0}, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBlock 
+                                Grid.Column="1"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Text="{Binding Title, StringFormat=Title: {0}, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBlock 
+                                Grid.Column="2"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Text="{Binding Description, StringFormat=Description: {0}, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBlock 
+                                Grid.Column="3"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Text="{Binding PersonalNumber, StringFormat=Number: {0}, UpdateSourceTrigger=PropertyChanged}"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Grid
+            Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="0.4*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel
+                Margin="5"
+                Grid.Row="0">
+                <TextBlock 
+                    Text="Название:"/>
+                <TextBox
+                    Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <TextBlock 
+                    Text="Описание :"/>
+                <TextBox
+                    Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <TextBlock 
+                    Text="Личный номер:"/>
+                <TextBox
+                    Text="{Binding Number, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <Button 
+                    Content="Добавить отдел"
+                    Command="{Binding AddDepartmentCommand}"/>
+                <Button 
+                    Content="Сохранить отдел"
+                    Command="{Binding SaveDepartmentCommand}"/>
+            </StackPanel>
+
+            <StackPanel
+                Margin="5"
+                Grid.Row="1"
+                VerticalAlignment="Bottom">
+                <Button 
+                    Content="Редкатировать отдел"
+                    Command="{Binding EditDepartmentCommand}"/>
+                <Button 
+                    Content="Удалить"
+                    Command="{Binding DeleteDepartmentCommand}"/>
+                <Button 
+                    Content="Назад"
+                    Command="{Binding BackCommand}"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
