@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\korbu\\Desktop\\Diplom\\Diplom.csproj": {}
+    "C:\\Users\\Ars\\Source\\Repos\\Ghost-Never-Bloom\\Diplom\\Diplom.csproj": {}
   },
   "projects": {
-    "C:\\Users\\korbu\\Desktop\\Diplom\\Diplom.csproj": {
+    "C:\\Users\\Ars\\Source\\Repos\\Ghost-Never-Bloom\\Diplom\\Diplom.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\korbu\\Desktop\\Diplom\\Diplom.csproj",
+        "projectUniqueName": "C:\\Users\\Ars\\Source\\Repos\\Ghost-Never-Bloom\\Diplom\\Diplom.csproj",
         "projectName": "Diplom",
-        "projectPath": "C:\\Users\\korbu\\Desktop\\Diplom\\Diplom.csproj",
-        "packagesPath": "C:\\Users\\korbu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\korbu\\Desktop\\Diplom\\obj\\",
+        "projectPath": "C:\\Users\\Ars\\Source\\Repos\\Ghost-Never-Bloom\\Diplom\\Diplom.csproj",
+        "packagesPath": "C:\\Users\\Ars\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ars\\Source\\Repos\\Ghost-Never-Bloom\\Diplom\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\korbu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ars\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
